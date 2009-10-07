@@ -1,5 +1,5 @@
 {package MooseX::CompileTime::Traits;
-our $VERSION = '0.092800';
+our $VERSION = '0.092801';
 }
 
 
@@ -18,9 +18,16 @@ role MooseX::CompileTime::Traits
         if(defined($traits))
         {
             my $meta = $class->meta;
-            $meta->make_mutable();
-            Moose::Util::apply_all_roles($meta, @$traits);
-            $meta->make_immutable();
+            if($meta->isa('Moose::Meta::Class') && $meta->is_immutable)
+            {
+                $meta->make_mutable();
+                Moose::Util::apply_all_roles($meta, @$traits);
+                $meta->make_immutable();
+            }
+            else
+            {
+                Moose::Util::apply_all_roles($meta, @$traits);
+            }
         }
     }
 }
@@ -38,7 +45,7 @@ MooseX::CompileTime::Traits - Allow compile time traits for classes/roles
 
 =head1 VERSION
 
-version 0.092800
+version 0.092801
 
 =head1 SYNOPSIS
 
@@ -87,11 +94,10 @@ traits that need to be applied.
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2009 by Infinity Interactive.
+This software is copyright (c) 2009 by Infinity Interactive.
 
-This is free software, licensed under:
-
-  The GNU General Public License, Version 3, June 2007
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut 
 

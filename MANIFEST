@@ -10,6 +10,7 @@ t/00-load.t
 t/01-basic.t
 t/lib/Bar.pm
 t/lib/Baz.pm
+t/lib/Faz.pm
 t/lib/Flarg.pm
 t/lib/Foo.pm
 t/release-pod-coverage.t

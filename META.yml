@@ -3,7 +3,7 @@ abstract: 'Allow for compile time traits application in classes/roles'
 author:
   - 'Nicholas Perez <nperez@cpan.org>'
 generated_by: 'Dist::Zilla version 1.092680'
-license: gpl
+license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -13,4 +13,4 @@ requires:
   Test::More: 0.92
 resources:
   repository: git://github.com/nperez/moosex-compiletime-traits.git
-version: 0.092800
+version: 0.092801

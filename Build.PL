@@ -6,7 +6,7 @@ use Module::Build;
 
 my $build = Module::Build->new(
   module_name   => 'MooseX::CompileTime::Traits',
-  license       => 'gpl',
+  license       => 'perl',
   dist_abstract => "Allow\ for\ compile\ time\ traits\ application\ in\ classes\/roles",
   dist_name     => "MooseX\-CompileTime\-Traits",
   dist_author   => [
