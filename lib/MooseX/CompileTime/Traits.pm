@@ -1,20 +1,18 @@
 {package MooseX::CompileTime::Traits;
-our $VERSION = '0.092801';
-}
-
+BEGIN {
+  $MooseX::CompileTime::Traits::VERSION = '1.102570';
+}}
 
 #ABSTRACT: Allow compile time traits for classes/roles
 
 
 use MooseX::Declare;
 
-role MooseX::CompileTime::Traits
-{
+role MooseX::CompileTime::Traits {
     use Moose::Util;
 
 
-    method import (ClassName $class: ArrayRef :$traits?)
-    {
+    method import (ClassName $class: ArrayRef :$traits?) {
         if(defined($traits))
         {
             my $meta = $class->meta;
@@ -36,7 +34,6 @@ role MooseX::CompileTime::Traits
 
 
 
-
 =pod
 
 =head1 NAME
@@ -45,7 +42,7 @@ MooseX::CompileTime::Traits - Allow compile time traits for classes/roles
 
 =head1 VERSION
 
-version 0.092801
+version 1.102570
 
 =head1 SYNOPSIS
 
@@ -65,9 +62,6 @@ version 0.092801
     $flarg->bar(); # 3
     $flarg->baz(); # 5
 
-
-
-
 =head1 DESCRIPTION
 
 MooseX::CompileTime::Traits allows role application at compile time via use 
@@ -78,29 +72,28 @@ Roles and their arguments should be provided as an ArrayRef of tuples.
 
 Simply 'with' the role to gain the functionality
 
-=head1 METHODS
+=head1 PUBLIC_METHODS
 
-=head2 import (ClassName $class: ArrayRef :$traits?)
+=head2 import
+
+    (ClassName $class: ArrayRef :$traits?)
 
 import is provided such that when your class or role is use'd it can take 
 additional arguments that will be validatated and interpreted as roles or
 traits that need to be applied.
 
-
-
 =head1 AUTHOR
 
-  Nicholas Perez <nperez@cpan.org>
+Nicholas Perez <nperez@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2009 by Infinity Interactive.
+This software is copyright (c) 2010 by Infinity Interactive.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
-=cut 
-
+=cut
 
 
 __END__

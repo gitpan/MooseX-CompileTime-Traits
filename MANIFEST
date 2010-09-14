@@ -1,6 +1,7 @@
 Changes
 LICENSE
 MANIFEST
+META.json
 META.yml
 Makefile.PL
 README
@@ -13,5 +14,5 @@ t/lib/Baz.pm
 t/lib/Faz.pm
 t/lib/Flarg.pm
 t/lib/Foo.pm
-t/release-pod-coverage.t
 t/release-pod-syntax.t
+weaver.ini
